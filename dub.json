@@ -1,0 +1,22 @@
+{
+	"name":					"godot-d-examples-one",
+	"description": 			"First set of godot examples using godot-d",
+	"authors": 				["IoriX2k2"],
+	"license": 				"MIT",
+
+	"targetType": 			"dynamicLibrary",
+	"targetPath": 			"lib",
+	"targetName": 			"gdeo",
+	"sourcePaths": 			["source"],
+
+	"dependencies": 
+	{
+	    "godot-d":
+		{
+	        "version": "~master",
+       		"path": "third_party/godot-d"
+	    }
+	}
+}
+
+

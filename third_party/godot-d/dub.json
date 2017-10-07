@@ -1,0 +1,51 @@
+{
+	"name": "godot-d",
+	"description": "A static binding to the DLScript API of the Godot Engine.",
+	"authors": [ "sheepandshepherd" ],
+	"license": "MIT",
+	
+	"targetType": "library",
+	"dflags-linux-dmd": ["-fPIC"],
+	"dflags-linux-ldc2": ["-relocation-model=pic"],
+	
+	"importPaths": [ "src", "classes" ],
+	"sourcePaths": [ "src", "classes" ],
+	
+	"subPackages":
+	[
+		{
+			"name": "generator",
+			"description": "A program that generates a native wrapper using Godot's API JSON",
+			"dependencies":
+			{
+				"asdf": "~>0.1.4",
+			},
+			"sourcePaths": [ "generator" ]
+		},
+		{
+			"name": "miscclasses",
+			"description": "Rarely useful classes separated from the main package for organization",
+			"license": "MIT",
+			"dependencies":
+			{
+				"godot-d": "*",
+			},
+			"targetType": "library",
+			"dflags-linux-dmd": ["-fPIC"],
+			"dflags-linux-ldc2": ["-relocation-model=pic"],
+			"importPaths": [ "miscclasses" ],
+			"sourcePaths": [ "miscclasses" ],
+		},
+		{
+			"name": "example",
+			"description": "Example using D classes",
+			"targetType": "dynamicLibrary",
+			"targetPath": "example/project/lib",
+			"dependencies":
+			{
+				"godot-d": "*"
+			},
+			"sourcePaths": [ "example/src" ]
+		}
+	],
+}

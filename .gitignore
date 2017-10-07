@@ -1,0 +1,7 @@
+.dub
+.idea
+*.exe
+*.o
+*.obj
+*.lst
+*.a
